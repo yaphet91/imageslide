@@ -4,6 +4,7 @@ body {
   margin: 0;
   height: 100vh;
   width: 100%;
+  opacity: 1;
 }
 
 .container {
@@ -16,8 +17,10 @@ body {
   height: 60vh;
   max-height: 600px;
   padding: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
-  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(rgba(1, 4, 20, 0.4), rgba(33, 2, 1, 0.575));
+  background-size: 5%;
+  border-radius: 9px;
+  box-shadow: 0 30px 50px rgba(255, 255, 255, 0.181);
   overflow: hidden;
   z-index: 1;
 }
@@ -30,26 +33,26 @@ body {
 
 .item {
   width: 200px;
-  height: 300px;
+  height: 90vh;
   background-position: center;
   background-size: cover;
   position: absolute;
   z-index: 10;
   top: 50%;
   transform: translate(0, -50%);
-  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother easing for expansion feel */
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 20px;
-  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.5);
-  opacity: 1;
+  box-shadow: 0 30px 50px rgba(74, 14, 14, 0.5);
+  opacity: 0.9;
 }
 
 .item.active {
   left: 50%;
   top: 50%;
-  width: calc(100% - 100px); /* Margin on left and right */
-  height: calc(100% - 100px); /* Margin on top and bottom */
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
   transform: translate(-50%, -50%);
-  border-radius: 0;
+  border-radius: 5px;
   box-shadow: none;
   z-index: 5;
   opacity: 1;
@@ -86,48 +89,81 @@ body {
 }
 
 .item .content {
-  width: 300px;
+  width: 350px;
   position: absolute;
   top: 50%;
-  left: 10%;
+  left: 5%;
   text-align: left;
-  padding: 20px;
-  color: #eee;
+  padding: 0px;
+  color: #fff;
   transform: translate(0, -50%);
   display: none;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .item.active .content {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   z-index: 15;
 }
 
 .item .description {
-  margin: 20px 0;
-  font-weight: bold;
+  margin: 10px 0px;
+  font-size: 18px;
+  font-weight: 500;
   opacity: 0;
-  animation: showcontent 1s ease-in-out 0.3s 1 forwards;
+  animation: showcontent 2s ease-in-out 0.3s 1 forwards;
 }
 
 .item .name {
-  font-size: 40px;
-  font-weight: bold;
+  font-size: 42px;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
   opacity: 0;
-  animation: showcontent 1s ease-in-out 1 forwards;
+  animation: showcontent 2s ease-in-out 0.5s 1 forwards;
 }
 
-.item button {
-  padding: 10px 20px;
+.item button.see-more {
+  padding: 12px 24px;
+  width: 25vh;
   border: none;
-  background-color: #bac383;
+  border-radius: 30px;
+  background-color: #f90a0a;
   color: #fff;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
   opacity: 0;
-  animation: showcontent 1s ease-in-out 0.3s 1 forwards;
+  animation: showcontent 1s ease-in-out 0.7s 1 forwards;
+  transition: background 3s ease; /* Updated to transition background */
+}
+
+.item button.see-more:hover {
+  background: linear-gradient(to right, rgb(193, 20, 20), rgba(190, 30, 24, 0.575));
+}
+
+.item button.download-btn {
+  padding: 10px 20px;
+  border: none;
+  width: 25vh;
+  border-radius: 30px;
+  background-color: #1e51fa;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0;
+  animation: showcontent 1s ease-in-out 0.9s 1 forwards;
+  transition: background-color 0.3s;
+}
+
+.item button.download-btn:hover {
+  background-color: #273ab6;
 }
 
 @keyframes showcontent {
@@ -149,6 +185,9 @@ body {
   z-index: 20;
   text-align: center;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .buttons button {
@@ -161,11 +200,23 @@ body {
   cursor: pointer;
 }
 
+.buttons button#add-image {
+  width: auto;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  background-color: #007bff;
+}
+
 .buttons button:hover,
 .buttons button:focus {
   background-color: #bac383;
   outline: 2px solid #bac383;
   outline-offset: 2px;
+}
+
+.buttons button#add-image:hover {
+  background-color: #0056b3;
 }
 
 @media (min-width: 1024px) {
@@ -175,7 +226,7 @@ body {
   }
 
   .item.active {
-    width: calc(100% - 80px); /* Smaller margins for bigger active slide */
+    width: calc(100% - 80px);
     height: calc(100% - 80px);
   }
 
@@ -185,7 +236,7 @@ body {
   }
 
   .item:nth-child(1):not(.active) {
-    left: calc(65% + 20px); /* Adjust starting position for more spacing */
+    left: calc(65% + 20px);
     opacity: 0.9;
   }
 
@@ -220,11 +271,16 @@ body {
   }
 
   .item .content {
-    width: 350px;
+    width: 400px;
+    padding: 30px;
   }
 
   .item .name {
     font-size: 48px;
+  }
+
+  .item .description {
+    font-size: 20px;
   }
 }
 
@@ -240,7 +296,7 @@ body {
   }
 
   .item.active {
-    width: calc(100% - 50px); /* Smaller margins on mobile */
+    width: calc(100% - 50px);
     height: calc(100% - 50px);
   }
 
@@ -275,12 +331,28 @@ body {
   }
 
   .item .content {
-    width: 200px;
+    width: 250px;
     left: 5%;
-    padding: 10px;
+    padding: 15px;
   }
 
   .item .name {
-    font-size: 24px;
+    font-size: 28px;
+  }
+
+  .item .description {
+    font-size: 16px;
+  }
+
+  .buttons button {
+    width: 40px;
+    height: 40px;
+    border: none;
+  }
+
+  .buttons button#add-image {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 430;
   }
 }
