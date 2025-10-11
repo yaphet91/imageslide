@@ -8,94 +8,106 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
     <link rel="stylesheet" href="profile.css">
     <link rel="icon" type="image/jpeg" href="images/fav.jpeg">
-
     <title>Slides</title>
   </head>
   <body>
     <div class="container">
       <div id="slide">
-        <div class="item" style="background-image: url(images/1.jpeg)">
+        <div class="item active" style="background-image: url(images/1.jpeg)">
           <div class="content">
-            <div class="name">HURREM 1</div>
-            <div class="description">This is the first slide</div>
-            <button>See More</button>
+            <div class="name">Welcome</div>
+            <div class="description">Explore the beauty of this moment</div>
+            <button class="see-more" onclick="openDetails('slide-1')">See More</button>
+            <button class="download-btn">Download</button>
           </div>
         </div>
-        <div class="item active" style="background-image: url(images/five.jpeg)">
+        <div class="item" style="background-image: url(images/five.jpeg)">
           <div class="content">
-            <div class="name">HURREM 2</div>
-            <div class="description">This is the second slide</div>
-            <button>See More</button>
+            <div class="name">Moments</div>
+            <div class="description">A snapshot of serenity</div>
+            <button class="see-more" onclick="openDetails('slide-2')">See More</button>
+            <button class="download-btn">Download</button>
           </div>
         </div>
         <div class="item" style="background-image: url(images/3.jpeg)">
           <div class="content">
-            <div class="name">HURREM 3</div>
-            <div class="description">This is the third slide</div>
-            <button>See More</button>
+            <div class="name">Hürrem</div>
+            <div class="description">Timeless elegance captured</div>
+            <button class="see-more" onclick="openDetails('slide-3')">See More</button>
+            <button class="download-btn">Download</button>
           </div>
         </div>
         <div class="item" style="background-image: url(images/4.jpeg)">
           <div class="content">
-            <div class="name">HURREM 4</div>
-            <div class="description">This is the fourth slide</div>
-            <button>See More</button>
+            <div class="name">Hürrem IV</div>
+            <div class="description">Grace in every detail</div>
+            <button class="see-more" onclick="openDetails('slide-4')">See More</button>
+            <button class="download-btn">Download</button>
           </div>
         </div>
         <div class="item" style="background-image: url(images/5.jpg)">
           <div class="content">
-            <div class="name">HURREM 5</div>
-            <div class="description">This is the fifth slide</div>
-            <button>See More</button>
+            <div class="name">Hürrem V</div>
+            <div class="description">A vision of beauty</div>
+            <button class="see-more" onclick="openDetails('slide-5')">See More</button>
+            <button class="download-btn">Download</button>
           </div>
         </div>
         <div class="item" style="background-image: url(images/6.jpg)">
           <div class="content">
-            <div class="name">HURREM 6</div>
-            <div class="description">This is the sixth slide</div>
-            <button>See More</button>
+            <div class="name">Hürrem VI</div>
+            <div class="description">Nature’s masterpiece</div>
+            <button class="see-more" onclick="openDetails('slide-6')">See More</button>
+            <button class="download-btn">Download</button>
           </div>
         </div>
         <div class="item" style="background-image: url(images/7.jpg)">
           <div class="content">
             <div class="name">Beauty</div>
-            <div class="description">This is the seventh slide</div>
-            <button>See More</button>
+            <div class="description">Radiance in simplicity</div>
+            <button class="see-more" onclick="openDetails('slide-7')">See More</button>
+            <button class="download-btn">Download</button>
           </div>
         </div>
         <div class="item" style="background-image: url(images/8.jpeg)">
           <div class="content">
-            <div class="name">8</div>
-            <div class="description">extraordinary slide</div>
-            <button >See More</button>
+            <div class="name">Extraordinary</div>
+            <div class="description">A moment of wonder</div>
+            <button class="see-more" onclick="openDetails('slide-8')">See More</button>
+            <button class="download-btn">Download</button>
           </div>
         </div>
-        <div class="item" style="background-image: url(images/9.jpeg">
+        <div class="item" style="background-image: url(images/9.jpeg)">
           <div class="content">
-            <div class="name">9</div>
-            <div class="description">A touch of Grace</div>
-            <button>See More</button>
+            <div class="name">Grace</div>
+            <div class="description">A touch of elegance</div>
+            <button class="see-more" onclick="openDetails('slide-9')">See More</button>
+            <button class="download-btn">Download</button>
           </div>
         </div>
         <div class="item" style="background-image: url(images/ten.jpeg)">
           <div class="content">
-            <div class="name">10</div>
-            <div class="description">This is the creation of God</div>
-            <button>See More</button>
+            <div class="name">Divine</div>
+            <div class="description">A creation of wonder</div>
+            <button class="see-more" onclick="openDetails('slide-10')">See More</button>
+            <button class="download-btn">Download</button>
           </div>
         </div>
         <div class="item" style="background-image: url(images/eleven.jpeg)">
           <div class="content">
-            <div class="name">11</div>
-            <div class="description">This is the last </div>
-            <button>See More</button>
+            <div class="name">Finale</div>
+            <div class="description">The last but not least</div>
+            <button class="see-more" onclick="openDetails('slide-11')">See More</button>
+            <button class="download-btn">Download</button>
           </div>
         </div>
       </div>
       <div class="buttons">
         <button id="previous" aria-label="Previous slide"><i class="fa-solid fa-angle-left"></i></button>
+        <button id="add-image" onclick="document.getElementById('imageUpload').click()">Add Image</button>
         <button id="next" aria-label="Next slide"><i class="fa-solid fa-angle-right"></i></button>
       </div>
+      <input type="file" id="imageUpload" accept="image/*" multiple onchange="handleImageUpload(event)" style="display: none;">
     </div>
     <script src="profile.js"></script>
   </body>
